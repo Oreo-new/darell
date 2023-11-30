@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ReviewResource\Pages;
-use App\Filament\Resources\ReviewResource\RelationManagers;
-use App\Models\Review;
+use App\Filament\Resources\UserResource\Pages;
+use App\Filament\Resources\UserResource\RelationManagers;
+use App\Models\User;
 use Filament\Forms;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,10 +14,11 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Hash;
 
-class ReviewResource extends Resource
+class UserResource extends Resource
 {
-    protected static ?string $model = Review::class;
+    protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -26,9 +26,18 @@ class ReviewResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->autofocus()->required(),
-                RichEditor::make('review')->required(),
-                TextInput::make('order')->nullable(),
+                TextInput::make('name')->required(),
+                TextInput::make('email')->required(),
+                TextInput::make('password')
+                    ->required(fn (string $context): bool => $context === 'create')
+                    ->password()
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->confirmed(),
+                TextInput::make('password_confirmation')
+                    ->required(fn (string $context): bool => $context === 'create')
+                    ->password()
+                    ->dehydrated(false),
             ]);
     }
 
@@ -36,8 +45,8 @@ class ReviewResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('order')->searchable()->sortable(),
                 TextColumn::make('name')->searchable()->sortable(),
+                TextColumn::make('email')->searchable()->sortable(),
             ])
             ->filters([
                 //
@@ -62,9 +71,9 @@ class ReviewResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListReviews::route('/'),
-            'create' => Pages\CreateReview::route('/create'),
-            'edit' => Pages\EditReview::route('/{record}/edit'),
+            'index' => Pages\ListUsers::route('/'),
+            'create' => Pages\CreateUser::route('/create'),
+            'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
 }

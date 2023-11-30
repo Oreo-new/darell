@@ -6,9 +6,12 @@ use App\Filament\Resources\MenuResource\Pages;
 use App\Filament\Resources\MenuResource\RelationManagers;
 use App\Models\Menu;
 use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +26,13 @@ class MenuResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name')->autofocus()->required(),
+                TextInput::make('url')->label('Link'),
+                TextInput::make('order')->nullable(),
+                Checkbox::make('new_window')
+                    ->default(false)
+                    ->autofocus()
+                    ->label('Diplay Page to new window'),
             ]);
     }
 
@@ -31,7 +40,8 @@ class MenuResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('order')->searchable()->sortable(),
+                TextColumn::make('name')->searchable()->sortable(),
             ])
             ->filters([
                 //

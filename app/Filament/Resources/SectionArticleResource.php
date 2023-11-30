@@ -6,9 +6,13 @@ use App\Filament\Resources\SectionArticleResource\Pages;
 use App\Filament\Resources\SectionArticleResource\RelationManagers;
 use App\Models\SectionArticle;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +27,13 @@ class SectionArticleResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('title')->autofocus()->required(),
+                TextInput::make('slug')
+                    ->disabledOn('edit')
+                    ->helperText('Auto generates url after saving. You may put a unique url or leave it blank.'),
+                RichEditor::make('description')->required(),
+                FileUpload::make('image')->autofocus()
+                ->image(),
             ]);
     }
 
@@ -31,7 +41,8 @@ class SectionArticleResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')->searchable()->sortable(),
+                TextColumn::make('slug')->searchable()->sortable(),
             ])
             ->filters([
                 //
