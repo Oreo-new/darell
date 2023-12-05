@@ -6,6 +6,7 @@ use App\Filament\Resources\ReviewResource\Pages;
 use App\Filament\Resources\ReviewResource\RelationManagers;
 use App\Models\Review;
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -26,9 +27,11 @@ class ReviewResource extends Resource
     {
         return $form
             ->schema([
+                Grid::make()->schema([
                 TextInput::make('name')->autofocus()->required(),
                 RichEditor::make('review')->required(),
                 TextInput::make('order')->nullable(),
+                ])->columns(1)
             ]);
     }
 

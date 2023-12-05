@@ -7,6 +7,7 @@ use App\Filament\Resources\SectionArticleResource\RelationManagers;
 use App\Models\SectionArticle;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -27,13 +28,15 @@ class SectionArticleResource extends Resource
     {
         return $form
             ->schema([
+                Grid::make()->schema([
                 TextInput::make('title')->autofocus()->required(),
                 TextInput::make('slug')
                     ->disabledOn('edit')
                     ->helperText('Auto generates url after saving. You may put a unique url or leave it blank.'),
                 RichEditor::make('description')->required(),
-                FileUpload::make('image')->autofocus()
+                FileUpload::make('img')->autofocus()
                 ->image(),
+                ])
             ]);
     }
 

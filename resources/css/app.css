@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,100;0,400;0,500;0,700;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,4 +13,23 @@
 .taviraj {
     font-family: 'Taviraj';
 }
+.roboto {
+    font-family: 'Roboto Condensed';
+}
 
+#author .desc > p {
+    @apply text-xl mb-3;
+    font-family: 'Taviraj';
+}
+#book .desc > p {
+    @apply text-xl mb-3 text-white;
+    font-family: 'Taviraj';
+}
+#allbooks .even .book-desc,
+#allbooks .odd .book-img {
+    order: 2;
+}
+#allbooks .even .book-img,
+#allbooks .odd .book-desc{
+    order: 1;
+}

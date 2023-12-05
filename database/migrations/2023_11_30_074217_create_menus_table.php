@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('url')->nullable();
             $table->boolean('new_window')->nullable();
-            $table->integer('order')->unique();
+            $table->integer('order');
             $table->timestamps();
         });
     }

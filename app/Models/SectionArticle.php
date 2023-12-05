@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 class SectionArticle extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     protected static function boot() {
         parent::boot();
