@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,100;0,400;0,500;0,700;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;500&display=swap');
+@import 'swiper/css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+body.stop {
+    overflow: hidden;
+}
 .popins {
     font-family: 'Poppins' !important;
 }
@@ -25,11 +29,34 @@
     @apply text-xl mb-3 text-white;
     font-family: 'Taviraj';
 }
-#allbooks .even .book-desc,
-#allbooks .odd .book-img {
-    order: 2;
+#allbooks .even .book-desc{
+ @apply order-1 sm:order-2;
 }
-#allbooks .even .book-img,
+#allbooks .odd .book-img {
+    @apply order-2;
+}
+#allbooks .even .book-img{
+    @apply order-2 sm:order-1;
+}
 #allbooks .odd .book-desc{
-    order: 1;
+    @apply order-1;
+}
+#header.active, #mobile.active {
+    @apply bg-white shadow-md transition-colors;
+}
+#header.active > ul {
+    @apply text-black transition-colors;
+}
+#header ul li:nth-child(4){
+    @apply text-3xl;
+}
+#header.active ul li:nth-child(4){
+    @apply text-2xl transition-all;
+}
+[x-cloak]  {
+    display: none !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    display: none !important;
 }
