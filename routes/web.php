@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::post('/contact-us', [ PageController::class , 'submitForm' ] )->name('contact-us');
+
+Route::post('/comment', [PageController::class, 'store'])->name('comments');

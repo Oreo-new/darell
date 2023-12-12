@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\MailNotification;
 use App\Models\Book;
+use App\Models\Comment;
 use App\Models\Menu;
 use App\Models\Review;
 use App\Models\SectionArticle;
@@ -44,5 +45,15 @@ class PageController extends Controller
         Mail::to('clintscopy@gmail.com')->send(new MailNotification($input));
 
         return redirect()->back()->with(['success' => 'Thank you for contacting us']);
+    }
+    public function store(Request $request)
+    {
+       
+        $request->validate(['comment'=>'required','name'=>'required']);
+        $input = $request->all();
+
+        Comment::create($input);
+
+        return back();
     }
 }

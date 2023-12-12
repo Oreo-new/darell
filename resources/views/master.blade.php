@@ -132,10 +132,14 @@
                 <div class='sk-tiktok-feed' data-embed-id='238258' data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300"></div>
             </div>
         </section>
+        <section class="container mx-auto px-4">
+            <x-comment />
+        </section>
+       
         <section id="contact" class="py-20">
-            <h3 class="text-[30px] lg:text-[50px] text-center roboto font-bold mb-16" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">Contact Me</h3>
+            <h3 class="text-[30px] lg:text-[50px] text-center roboto font-bold mb-16">Contact Me</h3>
             <div class="container mx-auto px-4">
-                <form action="{{ route('contact-us') }}" method="POST" id="contact-form" class="w-full md:w-1/2 mx-auto roboto shadow p-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
+                <form action="{{ route('contact-us') }}" method="POST" id="contact-form" class="w-full md:w-1/2 mx-auto roboto shadow p-6">
                     @csrf
                         @if(session('success'))
                             <div class="bg-green-300 shadow py-2 px-4 mb-5" style="w-full">

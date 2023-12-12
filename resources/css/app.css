@@ -41,6 +41,9 @@ body.stop {
 #allbooks .odd .book-desc{
     @apply order-1;
 }
+#header, #mobile {
+    @apply bg-slate-50 shadow-md;
+}
 #header.active, #mobile.active {
     @apply bg-white shadow-md transition-colors;
 }
