@@ -8,7 +8,22 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         
-
+        <title>Darrel B Dyal Author Of The Oracles of God | Darrel B Dyal Author</title>
+        <meta name="description" content="Darrel B Dyal is the author of Book The Oracles of God, Darrel B Dyal also wrote a book called Limpy, For such a time as this and more." />
+        <link rel="canonical" href="https://www.booksbyauthordarellbdyal.com" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Darrel B Dyal Author Of The Oracles of God | Darrel B Dyal Author" />
+        <meta property="og:description" content="Darrel B Dyal is the author of Book The Oracles of God, Darrel B Dyal also wrote a book called Limpy, For such a time as this and more." />
+        <meta property="og:url" content="https:///www.booksbyauthordarellbdyal.com" />
+        <meta property="og:site_name" content="Darell B. Dyal" />
+        <meta property="og:image" content="http:///www.booksbyauthordarellbdyal.com/storage/01HGT4RFDVX17SY2ZSFVBJP68Z.jpg" />
+        <meta property="og:image:width" content="1874" />
+        <meta property="og:image:height" content="732" />
+        <meta property="og:image:type" content="image/png" />
+        <meta name="twitter:card" content="summary_large_image" />
+    
+        <!-- / Yoast SEO plugin. -->
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
