@@ -1,6 +1,6 @@
 @if(!$comments->isEmpty())
 
-<div class="mt-8">
+<div class="mt-8 shadow">
   
 
     <!--- Start of comment box form -->

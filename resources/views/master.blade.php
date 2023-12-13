@@ -21,7 +21,7 @@
         <x-header/>
 
         <section id="home" class="w-full min-h-screen relative flex items-center justify-center">
-            <h1 class="roboto uppercase text-white  md:text-[100px] text-[50px] leading-tight text-center" data-aos="zoom-out" data-aos-duration="3000">
+            <h1 class="roboto uppercase text-white  md:text-[90px] text-[50px] leading-tight text-center" data-aos="zoom-out" data-aos-duration="3000">
                 the <br />oracles <br /> of <br />God 
             </h1>
             <div class="video-container z-[-1] absolute top-0 left-0 w-full h-screen">
@@ -61,31 +61,12 @@
                 </div>
             </section>
         @endif
-        @if(!$reviews->isEmpty())
-        <section id="reviews" class="bg-[#E5E8E5] py-20"> 
-            <div class="container mx-auto px-4">
-                <div class="flex w-full">
-                    <div class="swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        @foreach ( $reviews as $review)
-                            <div class="swiper-slide text-center">
-                                <p class="roboto text-lg">{{$review->name}}</p>
-                                {!!$review->review!!}
-                            </div>
-                        @endforeach
-                            
-                    </div>
-                </div>
-            </div>
-        </section>  
-    @endif
+        
        @if(!$allBooks->isEmpty())
         <div class="container mx-auto px-4 my-20">
             <h3 class="text-[30px] lg:text-[50px] roboto text-center font-bold" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">Darell Dyal’s Latest Releases</h3>
         </div>
-        <section id="allbooks">
+        <section id="allbooks" class="mb-20">
                 <div class="container mx-auto px-4">
                     @foreach ( $allBooks as $book)
                         @if($loop->iteration % 2 == 0)
@@ -122,6 +103,26 @@
                     @endforeach
                 </div>
             </section>
+        @endif
+        @if(!$reviews->isEmpty())
+            <section id="reviews" class="bg-[#E5E8E5] py-20"> 
+                <div class="container mx-auto px-4">
+                    <div class="flex w-full">
+                        <div class="swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @foreach ( $reviews as $review)
+                                <div class="swiper-slide text-center">
+                                    <p class="roboto text-lg">{{$review->name}}</p>
+                                    {!!$review->review!!}
+                                </div>
+                            @endforeach
+                                
+                        </div>
+                    </div>
+                </div>
+            </section>  
         @endif
         <section id="videos">
             <h3 class="text-[30px] lg:text-[50px] text-center roboto font-bold mb-16 mt-16" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">Latest Videos</h3>
