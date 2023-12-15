@@ -63,3 +63,16 @@ body.stop {
 .swiper-button-prev {
     display: none !important;
 }
+.youtube-user-root-container, .sk_branding {
+    display: none !important;
+}
+.instagram-user-root-container, .sk-ww-youtube-channel-videos-item:last-child{
+    display: none !important;
+}
+#videos .sk_branding {
+    display: none !important;
+    opacity: 0;
+}  
+.sk-title-padding {
+    display: none !important;
+}
