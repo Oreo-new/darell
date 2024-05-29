@@ -31,7 +31,6 @@ class SectionArticleResource extends Resource
                 Grid::make()->schema([
                 TextInput::make('title')->autofocus()->required(),
                 TextInput::make('slug')
-                    ->disabledOn('edit')
                     ->helperText('Auto generates url after saving. You may put a unique url or leave it blank.'),
                 RichEditor::make('description')->required(),
                 FileUpload::make('img')->autofocus()
