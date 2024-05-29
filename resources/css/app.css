@@ -82,7 +82,7 @@ body.stop {
 .darell-books .book-img figure {
     @apply mb-6;
 }
-.darell-books .book-img a span {
+.darell-books .book-img > a  {
  @apply bg-yellow-500 hover:bg-yellow-400 px-4 py-2 mt-4 rounded no-underline;
  font-family: 'Roboto Condensed';
 }
