@@ -83,7 +83,7 @@ body.stop {
     @apply mb-6;
 }
 .darell-books .book-img pre > a span {
- @apply bg-yellow-500 hover:bg-yellow-400 px-4 py-2 mt-4 rounded text no-underline;
+ @apply bg-yellow-500 hover:bg-yellow-400 px-4 py-2 mt-4 rounded no-underline;
 }
 
 
