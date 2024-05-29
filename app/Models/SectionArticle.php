@@ -15,7 +15,9 @@ class SectionArticle extends Model
         parent::boot();
 
         static::creating(function ($article) {
-            $article->slug = Str::slug($article->title, '-');
+            if (!$article->slug) {
+                $article->slug = Str::slug($article->title, '-');
+            }
         });
     }
 }
