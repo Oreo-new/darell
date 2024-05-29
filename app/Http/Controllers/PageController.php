@@ -19,6 +19,12 @@ class PageController extends Controller
         $articles = SectionArticle::all();
         $author = $articles->where('slug', 'about-the-author')->first();
 
+       
+        // Filter articles with 'qrcode' in the slug
+        $qrcode = $articles->filter(function ($article) {
+            return strpos($article->slug, 'qrcode') !== false;
+        });
+
         $books = Book::all();
         $featured = $books->where('featured')->first();
         $allBooks =  $books->whereNotIn('featured', 1)->sortBy('order');
@@ -29,8 +35,10 @@ class PageController extends Controller
         ->with('featured', $featured)
         ->with('allBooks', $allBooks)
         ->with('reviews', $reviews)
-        ->with('author', $author);
+        ->with('author', $author)
+        ->with('qrcode', $qrcode);
     }
+
     public function submitForm(Request $request)
     {
         $request->validate([

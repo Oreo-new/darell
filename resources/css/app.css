@@ -76,3 +76,14 @@ body.stop {
 .sk-title-padding {
     display: none !important;
 }
+.darell-books .book-img figcaption {
+    display: none;
+}
+.darell-books .book-img pre figure {
+    @apply mb-6;
+}
+.darell-books .book-img pre > a {
+ @apply bg-yellow-500 hover:bg-yellow-400 px-4 py-2 mt-4 rounded;
+}
+
+

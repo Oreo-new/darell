@@ -149,7 +149,20 @@
             </div>
         </section>
         <section class="container mx-auto px-4">
-            <x-comment />
+            {{-- <x-comment /> disable comment box because of spams --}}
+            @if($qrcode)
+                <h3 class="text-[30px] lg:text-[50px] text-center roboto font-bold mb-16">Scan Here to Discover Divine Wisdom – Buy My Books</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                    @foreach ($qrcode as $item)
+                    <div class="border darell-books p-4 flex items-center justify-center">
+                        <img src="{{asset('storage/'.$item->img)}}" alt='book.{{$item->slug }}' class="lg:w-9/12">
+                        <div class="book-img">
+                            {!! $item->description !!}
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            @endif
         </section>
        
         <section id="contact" class="py-20">
