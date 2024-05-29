@@ -155,7 +155,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                     @foreach ($qrcode as $item)
                     <div class="border darell-books p-4 flex items-center justify-center">
-                        <img src="{{asset('storage/'.$item->img)}}" alt='book.{{$item->slug }}' class="lg:w-9/12">
+                        <img src="{{asset('storage/'.$item->img)}}" alt='book.{{$item->slug }}' class="lg:w-9/12 ml-4">
                         <div class="book-img">
                             {!! $item->description !!}
                         </div>
