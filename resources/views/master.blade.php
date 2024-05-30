@@ -50,11 +50,17 @@
                         <h2 class="text-[30px] lg:text-[50px] roboto my-5 font-bold">Darell B. Dyal</h2>
                        
                         {!! $author->description !!}
+                        <div class="mt-10 roboto flex items-center">
+                            Please follow me on  <a href="https://www.facebook.com/profile.php?id=61555269757343" class="w-10 h-10 ml-4 mr-2"target="_blank"><img src="{{asset('images/facebook.png')}}" alt="darell facebook account"></a>
+                            <a href="https://www.tiktok.com/@darelldyal0" class="w-10 h-10 mr-2"target="_blank"><img src="{{asset('images/tiktok.png')}}" alt="darell tiktok account"></a>
+                            <a href="https://www.youtube.com/@DarellDyal" class="w-10 h-10 mr-2"target="_blank"><img src="{{asset('images/youtube.png')}}" alt="darell youtube account"></a>
+                        </div>
                     </div>
                     <div class="w-full lg:w-1/2">
                         <img src="{{asset('storage/'.$author->img)}}" alt="Darell B. Dyal" class="mx-auto max-w-full" width="333px" height="499px" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
                     </div>
                 </div>
+
             </div>
         </section>
         @if($featured)
@@ -202,6 +208,11 @@
                         <button type="submit" class="py-2 px-6 mx-auto bg-[#E5E8E5] hover:bg-[#c2cbc2] transition-colors text-black rounded mt-10">
                             Contact Me
                         </button>
+                    </div>
+                    <div class="mt-10 roboto flex items-center justify-center">
+                        Please follow me on  <a href="https://www.facebook.com/profile.php?id=61555269757343" class="w-10 h-10 ml-4 mr-2"target="_blank"><img src="{{asset('images/facebook.png')}}" alt="darell facebook account"></a>
+                        <a href="https://www.tiktok.com/@darelldyal0" class="w-10 h-10 mr-2"target="_blank"><img src="{{asset('images/tiktok.png')}}" alt="darell tiktok account"></a>
+                        <a href="https://www.youtube.com/@DarellDyal" class="w-10 h-10 mr-2"target="_blank"><img src="{{asset('images/youtube.png')}}" alt="darell youtube account"></a>
                     </div>
                 </form>
             </div>
