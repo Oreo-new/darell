@@ -111,7 +111,7 @@
                                     @if($book->qrcode)
                                         <div class="w-full py-10 sm:py-0">
                                             <img src="{{asset('storage/'.$book->qrcode)}}" alt="{{$book->title}}" class="mx-auto transition-transform" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
-                                            <p class="text-center w-full taviraj text-xl px-4 pt-4"><span class="underline underline-offset-4">Scan Me</span> – <a href="{{$book->qrcode_link}}" target="_blank" class="bg-yellow-500 hover:bg-yellow-400 px-3 py-1 mt-4 rounded ">Buy Now!</a></p>
+                                            <p class="text-center w-full roboto text-xl px-4 pt-4"><span class="underline underline-offset-4">Scan Me</span> – <a href="{{$book->qrcode_link}}" target="_blank" class="bg-yellow-500 hover:bg-yellow-400 px-3 py-1 mt-4 rounded ">Buy Now!</a></p>
                                         </div>
                                     @else
                                         <div class="w-full py-10 sm:py-0">
