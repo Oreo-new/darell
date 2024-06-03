@@ -50,7 +50,7 @@
                         <h2 class="text-[30px] lg:text-[50px] roboto my-5 font-bold">Darell B. Dyal</h2>
                        
                         {!! $author->description !!}
-                        <div class="mt-10 roboto flex items-center">
+                        <div class="mt-10 roboto flex items-center mb-10 lg:mb-0">
                             Please follow me on  <a href="https://www.facebook.com/profile.php?id=61555269757343" class="w-10 h-10 ml-4 mr-2"target="_blank"><img src="{{asset('images/facebook.png')}}" alt="darell facebook account"></a>
                             <a href="https://www.tiktok.com/@darelldyal0" class="w-10 h-10 mr-2"target="_blank"><img src="{{asset('images/tiktok.png')}}" alt="darell tiktok account"></a>
                             <a href="https://www.youtube.com/@DarellDyal" class="w-10 h-10 mr-2"target="_blank"><img src="{{asset('images/youtube.png')}}" alt="darell youtube account"></a>
@@ -82,7 +82,22 @@
                 </div>
             </section>
         @endif
+
+        <div class="bg-cover bg-fixed" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{asset('images/videocover.webp')}})">
+            <div class="container mx-auto px-4 py-10 my-20">
+
+                <h3 class="text-[30px] lg:text-[50px] roboto text-center font-bold text-white" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">Click Here To Watch The Video Guide.</h3>
+                <div class="w-full flex justify-center py-10">
+                    <video controls poster="/images/cross.webp" class="object-cover w-full max-w-[1000px]">
+                        <source src="{{asset('images/guidebook.mp4')}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+            </div>
+        </div>
         
+
        @if(!$allBooks->isEmpty())
         <div class="container mx-auto px-4 my-20">
             <h3 class="text-[30px] lg:text-[50px] roboto text-center font-bold" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">Darell Dyal’s Latest Releases</h3>
@@ -93,11 +108,17 @@
                         @if($loop->iteration % 2 == 0)
                             <div class="even flex flex-wrap sm:flex-nowrap w-full my-10">
                                 <div class="book-desc flex items-center w-full sm:w-1/2 flex-wrap bg-[#E5E8E5]"  data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
-                                    <div class="w-full py-10 sm:py-0">
-                                        <h4 class="text-center w-full roboto text-[30px] lg:text-[50px] px-4" >{{$book->title}}</h4>
-                                        <p class="text-center w-full taviraj text-xl px-4">{{$book->mini_title}}</p>
-                                    </div>
-                                    
+                                    @if($book->qrcode)
+                                        <div class="w-full py-10 sm:py-0">
+                                            <img src="{{asset('storage/'.$book->qrcode)}}" alt="{{$book->title}}" class="mx-auto transition-transform" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
+                                            <p class="text-center w-full taviraj text-xl px-4"><span class="underline underline-offset-4">Scan Me</span> – <a href="{{$book->qrcode_link}}" target="_blank" class="bg-yellow-500 hover:bg-yellow-400 px-3 py-1 mt-4 rounded ">Buy Now!</a></p>
+                                        </div>
+                                    @else
+                                        <div class="w-full py-10 sm:py-0">
+                                            <h4 class="text-center w-full roboto text-[30px] lg:text-[50px] px-4" >{{$book->title}}</h4>
+                                            <p class="text-center w-full taviraj text-xl px-4">{{$book->mini_title}}</p>
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="book-img  w-full sm:w-1/2  py-10">
                                     <a href="{{$book->link}}" target="_blank">
@@ -108,11 +129,17 @@
                         @else
                             <div class="odd flex flex-wrap sm:flex-nowrap w-full my-10">
                                 <div class="book-desc flex items-center w-full sm:w-1/2 flex-wrap bg-[#E5E8E5]" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
-                                    <div class="w-full py-10 sm:py-0" >
-                                        <h4 class="text-center w-full roboto text-[30px] lg:text-[50px] px-4" >{{$book->title}}</h4>
-                                        <p class="text-center w-full taviraj text-xl px-4" >{{$book->mini_title}}</p>
-                                    </div>
-                                    
+                                    @if($book->qrcode)
+                                        <div class="w-full py-10 sm:py-0">
+                                            <img src="{{asset('storage/'.$book->qrcode)}}" alt="{{$book->title}}"  class="mx-auto 0 transition-transform" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
+                                            <p class="text-center w-full roboto text-xl px-4 pt-4"><span class="underline underline-offset-4">Scan Me</span> – <a href="{{$book->qrcode_link}}" target="_blank" class="bg-yellow-500 hover:bg-yellow-400 px-3 py-1  mt-4 rounded ">Buy Now!</a></p>
+                                        </div>
+                                    @else
+                                        <div class="w-full py-10 sm:py-0">
+                                            <h4 class="text-center w-full roboto text-[30px] lg:text-[50px] px-4" >{{$book->title}}</h4>
+                                            <p class="text-center w-full taviraj text-xl px-4">{{$book->mini_title}}</p>
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="book-img  w-full sm:w-1/2  py-10">
                                     <a href="{{$book->link}}" target="_blank">

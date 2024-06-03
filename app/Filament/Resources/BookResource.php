@@ -41,8 +41,13 @@ class BookResource extends Resource
                     0 => 'Not Featured',
                     1 => 'Featured',
                 ]),
-                TextInput::make('order')->numeric()
+                TextInput::make('order')->numeric(),
+                FileUpload::make('qrcode')->autofocus()
+                ->image()->label('Upload a QRcode'),
+                TextInput::make('qrcode_link')->label('Qrcode link'),
                 ])->columns(1)
+
+                
             ]);
     }
 
