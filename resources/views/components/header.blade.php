@@ -1,9 +1,13 @@
+
+@php
+    $baseurl = (config('app.url'));
+@endphp
 <div class="w-full fixed z-10 hidden lg:block" id="header">
     <div class="container mx-auto px-4">
         <ul class="flex justify-between  py-4 items-center text-black" data-aos="fade-in" data-aos-delay="300">
             @if($menu)
                 @foreach ($menu as $men)
-                    <li class="text-lg roboto"><a href="{{$men->url}}">{{$men->name}}</a></li>
+                    <li class="text-lg roboto"><a href="{{$baseurl == url()->current() ? $men->url : $baseurl.$men->url }}">{{$men->name}}</a></li>
                     @if($loop->index == 2)
                         <li class="Poppins font-bold uppercase"><a href="#home">Darell B. Dyal</a></li>
                     @endif
@@ -39,10 +43,11 @@
         <ul class="mx-4 mb-5">
             @foreach ($menu as $item)
                 <li class="flex py-2 px-4 roboto text-lg">
-                    <a href="{{$item['url']}}"> {{$item->name}}</a>
+                    <a href="{{$baseurl == url()->current() ? $item['url'] : $baseurl.$item['url']}}"> {{$item->name}}</a>
                </li>
             @endforeach
         </ul>
     </div>
     </div>
+    
 </div>

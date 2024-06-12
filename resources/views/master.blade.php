@@ -32,7 +32,7 @@
         {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
         <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
-    <body class="font-serif antialiased" >
+    <body class="font-serif antialiased master" >
         <x-header/>
 
         <section id="home" class="w-full min-h-screen relative flex items-center justify-center">

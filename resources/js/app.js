@@ -76,24 +76,35 @@ import 'swiper/css/autoplay';
         });
         }
     }
+    if (document.body.classList.contains('master')) {
+        // Attach click event listeners to menu links
+        var menuLinks = document.querySelectorAll('#header ul li a');
+            menuLinks.forEach(function(link) {
+            if(link.getAttribute('href') == '/study-guide') {
+                console.log('study')
+            } else {
+                link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetId = link.getAttribute('href').substring(1); // Remove the '#'
 
-    // Attach click event listeners to menu links
-    var menuLinks = document.querySelectorAll('#header ul li a');
-        menuLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-        event.preventDefault();
-        var targetId = link.getAttribute('href').substring(1); // Remove the '#'
-        scrollToSection(targetId);
+                scrollToSection(targetId);
+                });
+            }   
+            
         });
-    });
-    var mobilelinks = document.querySelectorAll('#mobile a');
-        mobilelinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-        event.preventDefault();
-        var targetId = link.getAttribute('href').substring(1); // Remove the '#'
-        scrollToSection(targetId);
+        var mobilelinks = document.querySelectorAll('#mobile a');
+            mobilelinks.forEach(function(link) {
+            if(link.getAttribute('href') == '/study-guide') {
+                console.log('study')
+            } else {
+                link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetId = link.getAttribute('href').substring(1); // Remove the '#'
+                scrollToSection(targetId);
+                });
+            }
         });
-    });
+    }
 
     var toggleButton = document.getElementById('toggleBody');
         // Add an event listener to the button

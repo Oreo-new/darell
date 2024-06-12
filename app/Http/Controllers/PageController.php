@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\MailNotification;
 use App\Models\Book;
 use App\Models\Comment;
+use App\Models\Lecture;
 use App\Models\Menu;
 use App\Models\Review;
 use App\Models\SectionArticle;
@@ -63,5 +64,21 @@ class PageController extends Controller
         Comment::create($input);
 
         return back();
+    }
+    public function study() 
+    {
+       
+        $lectures = Lecture::all();
+        $categories = collect($lectures)->pluck('category')->unique();
+
+        $categoryNames = $categories->mapWithKeys(function ($category) {
+            return [$category => formatCategoryName($category)];
+        });
+
+
+        return view('pages.study')
+        ->with('lectures', $lectures)
+        ->with('categoryNames', $categoryNames)
+        ->with('categories', $categories);
     }
 }

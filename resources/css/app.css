@@ -86,5 +86,42 @@ body.stop {
  @apply bg-yellow-500 hover:bg-yellow-400 px-4 py-2 mt-4 rounded no-underline;
  font-family: 'Roboto Condensed';
 }
+button.categories.active {
+    @apply bg-teal-400;
+}
+.videoWrapper, .introVideo {
+    position: relative;
+    height: 0;
+    padding-top: 56.25%;
+    width: 100%;
+  }
+  
+  .videoWrapper iframe, .introVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .loading-spinner {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+}
 
-
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.vid-title.active {
+    @apply text-red-700;
+}
