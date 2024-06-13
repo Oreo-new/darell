@@ -2,10 +2,10 @@
   <div class="container mx-auto pt-30">
     <div id="intro" class="pt-28 mb-20">
         <div class="introVideo" id="mainvid">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/jQpn7jL129s?si=di0rdiE6Ny772ONl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iaq0E80daik?si=Qpxu4vaistpUiU6G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="loading-spinner" id="loading-main"></div>
         </div>
-        <h2 class="text-2xl font-bold mt-6 roboto">Oracles of God : Chronicles of the End Times Book Trailer by Darell Dyal</h2>
+        <h2 class="text-2xl font-bold mt-6 roboto">The Oracles of God, A Handbook: The Distilled Essence of God's Word Book Trailer by Darell B Dyal</h2>
         {{-- <button class="px-4 py-2 bg-teal-600 rounded download-btn">Download Video</button> --}}
     </div>
         
