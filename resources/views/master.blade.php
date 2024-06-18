@@ -112,7 +112,7 @@
                                         <div class="w-full py-10 sm:py-0">
                                             <img src="{{asset('storage/'.$book->qrcode)}}" alt="{{$book->title}}" class="mx-auto transition-transform" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
                                             <p class="text-center w-full roboto text-xl px-4 pt-4"><span class="underline underline-offset-4">Scan Me</span> – <a href="{{$book->qrcode_link}}" target="_blank" class="bg-yellow-500 hover:bg-yellow-400 px-3 py-1 mt-4 rounded ">Buy Now!</a></p>
-                                            @if($book->title == "The Oracles of God, A Handbook:")
+                                            @if($book->title == "Study Guide")
                                                 <p class="text-center w-full roboto text-xl px-4 pt-4 text-yellow-600 hover:underline"><a href="/study-guide">Visit Study Guide</a></p>
                                             @endif
                                         </div>
@@ -136,7 +136,7 @@
                                         <div class="w-full py-10 sm:py-0">
                                             <img src="{{asset('storage/'.$book->qrcode)}}" alt="{{$book->title}}"  class="mx-auto 0 transition-transform" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
                                             <p class="text-center w-full roboto text-xl px-4 pt-4"><span class="underline underline-offset-4">Scan Me</span> – <a href="{{$book->qrcode_link}}" target="_blank" class="bg-yellow-500 hover:bg-yellow-400 px-3 py-1  mt-4 rounded ">Buy Now!</a></p>
-                                            @if($book->title == "The Oracles of God, A Handbook:")
+                                            @if($book->title == "Study Guide")
                                                 <p class="text-center w-full roboto text-xl px-4 pt-4 text-yellow-600 hover:underline"><a href="/study-guide">Visit Study Guide</a></p>
                                             @endif
                                         </div>
