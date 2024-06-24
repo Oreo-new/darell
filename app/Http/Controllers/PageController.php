@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\MailNotification;
 use App\Models\Book;
 use App\Models\Comment;
+use App\Models\Endtime;
 use App\Models\Lecture;
 use App\Models\Menu;
 use App\Models\Review;
@@ -77,6 +78,22 @@ class PageController extends Controller
 
 
         return view('pages.study')
+        ->with('lectures', $lectures)
+        ->with('categoryNames', $categoryNames)
+        ->with('categories', $categories);
+    }
+    public function end() 
+    {
+       
+        $lectures = Endtime::all();
+        $categories = collect($lectures)->pluck('category')->unique();
+
+        $categoryNames = $categories->mapWithKeys(function ($category) {
+            return [$category => formatCategoryName($category)];
+        });
+
+
+        return view('pages.endtimes')
         ->with('lectures', $lectures)
         ->with('categoryNames', $categoryNames)
         ->with('categories', $categories);
