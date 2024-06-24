@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container mx-auto pt-30">
       <div id="intro" class="pt-28 mb-20">
-          <div class="introVideo" id="mainvid">
+          <div class="introVideo h-[574px] md:h-auto" id="mainvid">
               <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <div class="loading-spinner" id="loading-main"></div>
               <video controls class="object-cover w-full absolute top-0" id="endvid">
