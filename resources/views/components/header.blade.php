@@ -2,12 +2,23 @@
 @php
     $baseurl = (config('app.url'));
 @endphp
-<div class="w-full fixed z-10 hidden lg:block" id="header">
+<div class="w-full fixed z-10 hidden lg:block bg-white" id="header">
     <div class="container mx-auto px-4">
-        <ul class="flex justify-between  py-4 items-center text-black" data-aos="fade-in" data-aos-delay="300">
+        <ul class="flex justify-between  py-4 items-center text-black main-menu" data-aos="fade-in" data-aos-delay="300">
             @if($menu)
                 @foreach ($menu as $men)
-                    <li class="text-lg roboto"><a href="{{$baseurl == url()->current() ? $men->url : $baseurl.$men->url }}">{{$men->name}}</a></li>
+                    
+                        @if($men->name == "Lectures/Teachings")
+                            <li class="text-lg roboto relative cursor-pointer">{{$men->name}}
+                                <div class="absolute bg-white pt-5 p-4 sub-menu z-20">
+                                    <span class="w-full hover:text-yellow-600"><a href="{{$baseurl == url()->current() ? "/study-guide" : $baseurl."/study-guide" }}">Study Guide</a></span>
+                                    <span class="w-full hover:text-yellow-600"><a href="{{$baseurl == url()->current() ? "/end-times" : $baseurl."/end-times" }}">Chronicles of End Times</a></span>
+                                </div>
+                                
+                            </li>
+                        @else
+                        <li class="text-lg roboto"><a href="{{$baseurl == url()->current() ? $men->url : $baseurl.$men->url }}">{{$men->name}}</a></li>
+                        @endif
                     @if($loop->index == 2)
                         <li class="Poppins font-bold uppercase"><a href="#home">Darell B. Dyal</a></li>
                     @endif
@@ -42,9 +53,19 @@
         
         <ul class="mx-4 mb-5">
             @foreach ($menu as $item)
-                <li class="flex py-2 px-4 roboto text-lg">
-                    <a href="{{$baseurl == url()->current() ? $item['url'] : $baseurl.$item['url']}}"> {{$item->name}}</a>
-               </li>
+                @if($item->name == "Lectures/Teachings")
+                    <li class="text-lg roboto cursor-pointer py-2 px-4">{{$item->name}}
+                        <div class="bg-white pt-2 px-4 pb-0 z-20">
+                            <span class="w-full"><a href="{{$baseurl == url()->current() ? "/study-guide" : $baseurl."/study-guide" }}">Study Guide</a></span>
+                            <span class="w-full"><a href="{{$baseurl == url()->current() ? "/end-times" : $baseurl."/end-times" }}">Chronicles of End Times</a></span>
+                        </div>
+                        
+                    </li>
+                @else
+                    <li class="flex py-2 px-4 roboto text-lg">
+                        <a href="{{$baseurl == url()->current() ? $item['url'] : $baseurl.$item['url']}}"> {{$item->name}}</a>
+                    </li>
+               @endif
             @endforeach
         </ul>
     </div>

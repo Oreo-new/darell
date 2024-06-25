@@ -78,7 +78,7 @@ import 'swiper/css/autoplay';
     }
     if (document.body.classList.contains('master')) {
         // Attach click event listeners to menu links
-        var menuLinks = document.querySelectorAll('#header ul li a');
+        var menuLinks = document.querySelectorAll('#header ul li > a');
             menuLinks.forEach(function(link) {
             if(link.getAttribute('href') == '/study-guide') {
                 console.log('study')

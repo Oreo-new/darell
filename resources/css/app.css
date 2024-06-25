@@ -42,7 +42,7 @@ body.stop {
     @apply order-1;
 }
 #header, #mobile {
-    @apply bg-slate-50 shadow-md;
+    @apply bg-white shadow-md;
 }
 #header.active, #mobile.active {
     @apply bg-white shadow-md transition-colors;
@@ -128,4 +128,10 @@ button.categories.active {
 }
 .vid-title.active {
     @apply text-red-700;
+}
+.sub-menu {
+    @apply hidden;
+}
+ul.main-menu li:hover .sub-menu {
+    @apply block;
 }
