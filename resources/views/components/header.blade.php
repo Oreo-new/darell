@@ -56,8 +56,8 @@
                 @if($item->name == "Lectures/Teachings")
                     <li class="text-lg roboto cursor-pointer py-2 px-4">{{$item->name}}
                         <div class="bg-white pt-2 px-4 pb-0 z-20">
-                            <span class="w-full"><a href="{{$baseurl == url()->current() ? "/study-guide" : $baseurl."/study-guide" }}">Study Guide</a></span>
-                            <span class="w-full"><a href="{{$baseurl == url()->current() ? "/end-times" : $baseurl."/end-times" }}">Chronicles of End Times</a></span>
+                            <span class="w-full block"><a href="{{$baseurl == url()->current() ? "/study-guide" : $baseurl."/study-guide" }}">Study Guide</a></span>
+                            <span class="w-full block"><a href="{{$baseurl == url()->current() ? "/end-times" : $baseurl."/end-times" }}">Chronicles of End Times</a></span>
                         </div>
                         
                     </li>
