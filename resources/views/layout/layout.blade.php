@@ -1,3 +1,6 @@
+@php
+use Illuminate\Support\Facades\Vite;
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -28,9 +31,16 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
         <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
+        <link rel="stylesheet" href="{{ asset('css/flipbook/carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css//flipbook/theme.min.css') }}">
         <!-- Scripts -->
         {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
         <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+        <script src="{{ asset('js/flipbook/turn.js')}}" type="text/javascript"></script>
+        <script src="{{ asset('js/flipbook/basic.js')}}" type="text/javascript"></script>  
+        <script src="{{ asset('js/flipbook/owl.js')}}" type="text/javascript"></script>  
+
     </head>
     <body class="font-serif antialiased" >
         <x-header/>
@@ -45,7 +55,9 @@
       </footer>
        
     
-        <!-- Place <div> tag where you want the feed to appear -->
+
+      
+
 
         @stack('modals')
         @livewireScripts
