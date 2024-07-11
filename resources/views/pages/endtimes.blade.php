@@ -16,7 +16,7 @@
     </div>
     <div class="container mx-auto pt-0 md:pt-30 pb-30">
         
-        <div class=" h-[600px] relative hidden md:block">
+        <div class=" h-[600px] relative hidden md:block mb-28">
             <!--Normal FLipbook-->
             
             <div class="flipbook-viewport">
