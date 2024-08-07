@@ -14,42 +14,14 @@
       </div>
           
     </div>
-    <div class="container mx-auto pt-0 md:pt-30 pb-30">
+    <div class="container mx-auto pt-0 md:pt-30 ">
         
-        <div class=" h-[600px] relative hidden md:block mb-28">
-            <!--Normal FLipbook-->
-            
-            <div class="flipbook-viewport">
-                <div class="container2">
-                    <div class="flipbook">
-                        <div style="background-image:url({{asset('images/flipbook/endtimes-1.jpg')}})"></div>
-                        <div style="background-image:url({{asset('images/flipbook/endtimes-2.jpg')}})"></div>
-                        <div style="background-image:url({{asset('images/flipbook/endtimes-3.jpg')}})"></div>
-
-                    </div>
-                </div>
-            </div>
-            <h3 class="text-xl font-bold mt-6 roboto text-center">Flip the page and read the Guide.</h3>
+        <div class="block md:flex flex-wrap relative">
+            <img src="{{asset('images/flipbook/endtimes-1.jpg')}}" alt="" class="w-full md:w-1/2 max-w-full h-auto">
+            <img src="{{asset('images/flipbook/endtimes-2.jpg')}}" alt="" class="w-full md:w-1/2 max-w-full h-auto">
+            <img src="{{asset('images/flipbook/endtimes-3.jpg')}}" alt="" class="w-full md:w-1/2 max-w-full h-auto">
         </div>
-        <div class="relative block md:hidden">
-            <!--Normal FLipbook-->
-            
-            <div class="loop owl-carousel">
-                <div class="item w-full">
-                    <img src="{{asset('images/flipbook/endtimes-1.jpg')}}" alt="" class="w-auto">
-                    {{-- <div style="background-image:url({{asset('images/flipbook/endtimes-1.jpg')}})" class="bg-center bg-no-repeat bg-cover w-[200px] h-[300px]"></div> --}}
-                </div> 
-                <div class="item w-full">
-                    {{-- <div style="background-image:url({{asset('images/flipbook/endtimes-2.jpg')}})" class="bg-center bg-no-repeat bg-cover w-[200px] h-[300px]"></div> --}}
-                    <img src="{{asset('images/flipbook/endtimes-2.jpg')}}" alt="" class="w-auto ">
-                </div> 
-                <div class="item w-full">
-                    <img src="{{asset('images/flipbook/endtimes-3.jpg')}}" alt="" class="w-auto ">
-                    {{-- <div style="background-image:url({{asset('images/flipbook/endtimes-3.jpg')}})" class="bg-center bg-no-repeat bg-cover w-[200px] h-[300px]"></div> --}}
-                </div> 
-             </div>
-            <h3 class="text-xl font-bold mt-6 roboto text-center">Swipe the page and read the Guide.</h3>
-        </div>
+       
         
       
     </div>
@@ -188,39 +160,31 @@
        }
        
    
-        jQuery('.flipbook').turn({
-                // Width
+        // jQuery('.flipbook').turn({
+        //         // Width
 
-                width:922,
+        //         width:922,
                 
-                // Height
+        //         // Height
 
-                height:600,
+        //         height:600,
 
-                // Elevation
+        //         // Elevation
 
-                elevation: 50,
+        //         elevation: 50,
                 
-                // Enable gradients
+        //         // Enable gradients
 
-                gradients: true,
+        //         gradients: true,
                 
-                // Auto center this flipbook
+        //         // Auto center this flipbook
 
-                autoCenter: true
+        //         autoCenter: true
 
-        });
+        // });
     
       
        
-        jQuery(document).ready(function($) {
-              $('.loop').owlCarousel({
-                center: true,
-                items: 1,
-                loop: true,
-                margin: 10,
-              });
-            });
 
         
   
