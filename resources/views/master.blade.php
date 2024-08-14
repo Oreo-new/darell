@@ -40,7 +40,7 @@
                 the <br />oracles <br /> of <br />God 
             </h1>
             <div class="video-container z-[-1] absolute top-0 left-0 w-full h-screen">
-                <video src="{{asset('images/home-video.mp4')}}" autoplay loop muted class="object-cover w-full h-screen"></video>
+                <video src="{{asset('videos/WELCOME_STATEMENT.mp4')}}" autoplay loop muted class="object-cover w-full h-screen"></video>
             </div>
         </section>
         <section id="author" class="bg-[#E5E8E5]">

@@ -98,4 +98,9 @@ class PageController extends Controller
         ->with('categoryNames', $categoryNames)
         ->with('categories', $categories);
     }
+    public function current() 
+    {
+
+        return view('pages.current');
+    }
 }

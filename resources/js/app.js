@@ -80,7 +80,7 @@ import 'swiper/css/autoplay';
         // Attach click event listeners to menu links
         var menuLinks = document.querySelectorAll('#header ul li > a');
             menuLinks.forEach(function(link) {
-            if(link.getAttribute('href') == '/study-guide') {
+            if(link.getAttribute('href') == '/study-guide' || link.getAttribute('href') == '/current-events') {
                 console.log('study')
             } else {
                 link.addEventListener('click', function(event) {
@@ -94,7 +94,7 @@ import 'swiper/css/autoplay';
         });
         var mobilelinks = document.querySelectorAll('#mobile a');
             mobilelinks.forEach(function(link) {
-            if(link.getAttribute('href') == '/study-guide') {
+            if(link.getAttribute('href') == '/study-guide' || link.getAttribute('href') == '/current-events') {
                 console.log('study')
             } else {
                 link.addEventListener('click', function(event) {
