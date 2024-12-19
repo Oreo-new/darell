@@ -1,16 +1,16 @@
 import './bootstrap';
 import Swiper from 'swiper';
 // import Swiper styles
-import Alpine from 'alpinejs';
+// import Alpine from 'alpinejs';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
  
-window.Alpine = Alpine;
+// window.Alpine = Alpine;
 
 AOS.init({
     once: true
 });
-Alpine.start();
+// Alpine.start();x
 
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 
