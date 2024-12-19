@@ -12,39 +12,39 @@ AOS.init({
 });
 // Alpine.start();x
 
-import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+// import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/autoplay';
 
-    const swiper = new Swiper('.swiper', {
-        modules:  [Navigation, Autoplay, Pagination],
-        autoplay: {
-            delay: 5000,
-        },
-        pagination: {
-            el: 'swiper-pagination',
-            type: 'bullets'
-        },
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: true,
-        navigation: true,
-        breakpoints: {
-        300: {
-            slidesPerView: 1,
-        },
-        768: {
-            slidesPerView: 2,
-        },
-        900: {
-            slidesPerView: 3,
-        },
+//     const swiper = new Swiper('.swiper', {
+//         modules:  [Navigation, Autoplay, Pagination],
+//         autoplay: {
+//             delay: 5000,
+//         },
+//         pagination: {
+//             el: 'swiper-pagination',
+//             type: 'bullets'
+//         },
+//         slidesPerView: 3,
+//         spaceBetween: 30,
+//         loop: true,
+//         navigation: true,
+//         breakpoints: {
+//         300: {
+//             slidesPerView: 1,
+//         },
+//         768: {
+//             slidesPerView: 2,
+//         },
+//         900: {
+//             slidesPerView: 3,
+//         },
             
-        }
-    })
+//         }
+//     })
 
     window.addEventListener('scroll', function() {
         var myDiv = document.getElementById('header');
@@ -75,6 +75,7 @@ import 'swiper/css/autoplay';
             behavior: 'smooth'
         });
         }
+        console.log('debug');
     }
     if (document.body.classList.contains('master')) {
         // Attach click event listeners to menu links
