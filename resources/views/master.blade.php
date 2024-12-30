@@ -84,7 +84,7 @@
         @endif
 
         <div class="bg-cover bg-fixed" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{asset('images/videocover.webp')}})">
-            <div class="container mx-auto px-4 py-10 my-20">
+            <div class="container mx-auto px-4 py-10 mt-20">
 
                 <h3 class="text-[30px] lg:text-[50px] roboto text-center font-bold text-white" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">Click Here To Watch The Video Guide.</h3>
                 <div class="w-full flex justify-center py-10">
@@ -93,13 +93,58 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                
             </div>
         </div>
-        
+    
+        @if(!$blogs->isEmpty()) 
+            <section id="blogs">
+                <div class="container mx-auto px-4 py-20">
+                    <h3 class="text-[30px] lg:text-[50px] roboto text-center font-bold" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">Latest Blog Articles</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
+                        @foreach ($blogs as $blog)
+                            <div class="border rounded-t-md" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
+                                <div class="h-[500px] md:h-[400px] w-full relative">
+                                    @if($blog->image)
+                                        <img src="{{asset('storage/'.$blog->image)}}" alt="{{$blog->title}}" class="object-cover h-full w-full rounded-t-md">
+                                    @else
+                                        <img src="{{ asset('images/blog1.jpg') }}" alt="{{ $blog->title }}" class="object-cover h-full w-full rounded-t-md">
+                                    @endif
+                                    
+                                    <div class="absolute rounded-md w-4/5 left-0 right-0 m-auto -bottom-5 bg-slate-200 p-4">
+                                        <div class="w-full flex justify-between roboto">
+                                            <span>{{ \Carbon\Carbon::parse($blog->created_at)->format('M d, Y') }}</span>
+                                            <span><strong>Author: </strong>{{ $blog->author->name }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-10 relative">
+                                    <h3 class="text-center roboto text-3xl">{{$blog->title}}</h3>
+                                    <div class="mt-6 pb-6 rubik text-[#66686d]">
+                                        {{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 200) }}
+                                    </div>
+                                    <a href="/blog/{{$blog->slug}}" class="">
+                                        <button class="roboto capitalize text-lg hover:underline underline-offset-2">
+                                            read more...
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                        
+                    </div>
+                    <div class="w-full flex justify-center mt-12">
+                        <a href="/blogs" class="w-auto m-auto">
+                            <button class="px-6 py-2 uppercase rubik bg-yellow-500 hover:bg-yellow-400 text-xl rounded-md transition-colors">
+                                Visit My Blog Page
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        @endif
 
        @if(!$allBooks->isEmpty())
-        <div class="container mx-auto px-4 my-20">
+        <div class="container mx-auto px-4 mt-10 mb-20">
             <h3 class="text-[30px] lg:text-[50px] roboto text-center font-bold" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">Darell Dyal’s Latest Releases</h3>
         </div>
         <section id="allbooks" class="mb-20">

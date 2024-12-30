@@ -3,6 +3,7 @@
 use App\Http\Controllers\PageController;
 // use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TikTokController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'home'])->name('home');
+// Route::get('/tiktok', [PageController::class, 'tiktok'])->name('tiktok');
+Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs');
+Route::get('/blog/{slug}', [PageController::class, 'blog'])->name('blog');
 Route::get('/study-guide', [PageController::class, 'study'])->name('study-guide');
 Route::get('/end-times', [PageController::class, 'end'])->name('end-times');
 Route::get('/current-events', [PageController::class, 'current'])->name('current-events');
 Route::post('/contact-us', [ PageController::class , 'submitForm' ] )->name('contact-us');
+
 
 Route::post('/comment', [PageController::class, 'store'])->name('comments');
 

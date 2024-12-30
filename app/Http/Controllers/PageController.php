@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\MailNotification;
+use App\Models\Blog;
 use App\Models\Book;
 use App\Models\Comment;
 use App\Models\Endtime;
@@ -30,7 +31,8 @@ class PageController extends Controller
         $books = Book::all();
         $featured = $books->where('featured')->first();
         $allBooks =  $books->whereNotIn('featured', 1)->sortBy('order');
-
+        $blogs = Blog::query()->with(['author'])->orderBy('created_at', 'desc')->take(3)->get();
+        
         $reviews = Review::all()->sortBy('order');
         
         return view('master')
@@ -38,6 +40,7 @@ class PageController extends Controller
         ->with('allBooks', $allBooks)
         ->with('reviews', $reviews)
         ->with('author', $author)
+        ->with('blogs', $blogs)
         ->with('qrcode', $qrcode);
     }
 
@@ -98,6 +101,32 @@ class PageController extends Controller
         ->with('categoryNames', $categoryNames)
         ->with('categories', $categories);
     }
+    public function blogs() 
+    {
+       
+        // $blogs = Blog::all()->wth ->sortByDesc('created_at');
+        // dd($blogs);
+        return view('pages.blogs', [
+            'blogs' => Blog::query()
+                ->with(['author'
+                ])->orderBy('created_at', 'desc')
+                ->paginate(9)
+
+        ]);
+    }
+    public function blog($slug) 
+    {
+       
+        $blog = Blog::where('slug', $slug)->firstorFail();
+        $blogs = Blog::all()->sortByDesc('created_at')->take(3);
+        return view('pages.blog')->with('blog', $blog)->with('blogs', $blogs);
+    }
+    public function tiktok() 
+    {
+
+        return view('pages.tiktok');
+    }
+
     public function current() 
     {
 
