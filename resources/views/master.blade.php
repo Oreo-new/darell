@@ -103,11 +103,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
                         @foreach ($blogs as $blog)
                             <div class="border rounded-t-md" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
-                                <div class="h-[500px] md:h-[400px] w-full relative">
+                                <div class="h-[500px] md:h-[400px] w-full relative rounded-t-md bg-gray-300">
                                     @if($blog->image)
-                                        <img src="{{asset('storage/'.$blog->image)}}" alt="{{$blog->title}}" class="object-cover h-full w-full rounded-t-md">
+                                        <img src="{{asset('storage/'.$blog->image)}}" alt="{{$blog->title}}" class="object-contain h-full w-full rounded-t-md">
                                     @else
-                                        <img src="{{ asset('images/blog1.jpg') }}" alt="{{ $blog->title }}" class="object-cover h-full w-full rounded-t-md">
+                                        <img src="{{ asset('images/blog1.jpg') }}" alt="{{ $blog->title }}" class="object-contain h-full w-full rounded-t-md">
                                     @endif
                                     
                                     <div class="absolute rounded-md w-4/5 left-0 right-0 m-auto -bottom-5 bg-slate-200 p-4">

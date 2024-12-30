@@ -12,7 +12,7 @@
         <div class="container mx-auto px-4 py-20">
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-3/4">
-                    <div class="w-full h-[600px] pr-10 ">
+                    <div class="w-full h-auto pr-10 ">
                     @if($blog->image)
                         <img src="{{asset('storage/'.$blog->image)}}" alt="{{$blog->title}}" class="object-cover h-full w-full rounded-t-md">
                     @else
